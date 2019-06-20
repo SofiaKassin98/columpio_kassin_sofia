@@ -1,0 +1,94 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.03738840446253781 0.9981438343514145 0.04807279020404137 4.461838686816108
+  position -2.5711722106505746 0.43249592389541724 0.12758120738925693
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  rotation 1 0 0 0
+  children [
+    DEF COLUMPIO Group {
+      children [
+        DEF A Group {
+          children [
+            Transform {
+              translation 0 0.19 0
+              rotation 0 0 1 0.3926996938995747
+              children [
+                DEF SH_AL Shape {
+                  appearance DEF BLUE PBRAppearance {
+                    baseColor 0.4470588235294118 0.6235294117647059 0.8117647058823529
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF BASE Cylinder {
+                    height 0.4
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation -0.18 0.19 0
+              rotation 0 0 1 -0.393
+              children [
+                DEF SH_AR Shape {
+                  appearance DEF BLUE PBRAppearance {
+                    baseColor 0.4470588235294118 0.6235294117647059 0.8117647058823529
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF BASE Cylinder {
+                    height 0.4
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation -0.09 0.2 0
+              rotation 0 0 1 1.5707996938995747
+              children [
+                Shape {
+                  appearance USE BLUE
+                  geometry DEF SH_MIDDLE Cylinder {
+                    height 0.19
+                    radius 0.018
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF AI Group {
+          children [
+            Transform {
+              translation 0 0 0.36
+              rotation 0 0 1 6.283185307179586
+              children [
+                Transform {
+                  translation -0.09 0.39 -0.18
+                  rotation 1 0 0 1.5708003061004252
+                  children [
+                    Shape {
+                      appearance USE BLUE
+                      geometry USE BASE
+                    }
+                  ]
+                }
+                USE A
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
