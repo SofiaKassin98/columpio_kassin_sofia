@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.03738840446253781 0.9981438343514145 0.04807279020404137 4.461838686816108
-  position -2.5711722106505746 0.43249592389541724 0.12758120738925693
+  orientation 0.13289897027544964 0.9735765140253572 0.18570577545665756 4.206267420527295
+  position -0.5471849306811027 0.49556383868892306 -0.04244166115036538
 }
 TexturedBackground {
 }
@@ -89,6 +89,58 @@ Solid {
           ]
         }
       ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor -0.09 0.35 0.18
+      }
+      endPoint Solid {
+        children [
+          Group {
+            children [
+              Transform {
+                translation -0.09 0.32 0.18
+                children [
+                  Shape {
+                    geometry Cylinder {
+                      height 0.06
+                      radius 0.02
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.09000000000000001 0.37 0.18
+      }
+      endPoint Solid {
+        translation -0.09 0.36 0.18
+        rotation 0 -1 0 0.00017131999239528576
+        children [
+          Shape {
+            appearance DEF GREEN PBRAppearance {
+              baseColor 0.5411764705882353 0.8862745098039215 0.20392156862745098
+              roughness 1
+              metalness 0
+            }
+            geometry DEF BOX Box {
+              size 0.019999999999999997 0.02 0.2
+            }
+          }
+        ]
+        name "solid(1)"
+        physics Physics {
+        }
+      }
     }
   ]
 }
